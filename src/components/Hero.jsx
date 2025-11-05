@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Spline from '@splinetool/react-spline';
 import { ArrowRight, Shield, Activity } from 'lucide-react';
 
-export default function Hero() {
+export default function Hero({ onGetStarted }) {
   return (
     <section className="relative min-h-[88vh] w-full overflow-hidden bg-slate-950" id="home">
       {/* 3D Background */}
@@ -35,15 +35,15 @@ export default function Hero() {
             MedRag combines Retrieval-Augmented Generation with a medical knowledge graph to compare real records and reason through similar diseases — helping doctors reach accurate, explainable decisions.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <motion.a
+            <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="#dashboard"
+              onClick={onGetStarted}
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-5 py-3 text-white shadow-lg shadow-cyan-500/25 hover:brightness-110"
             >
-              Explore Dashboard
+              Get Started
               <ArrowRight className="h-4 w-4" />
-            </motion.a>
+            </motion.button>
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

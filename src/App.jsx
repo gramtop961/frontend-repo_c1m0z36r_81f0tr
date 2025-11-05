@@ -1,16 +1,20 @@
+import { useState } from 'react';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Sections from './components/Sections';
+import Landing from './components/Landing';
+import ChatApp from './components/ChatApp';
 import Footer from './components/Footer';
 
 function App() {
+  const [view, setView] = useState('landing'); // 'landing' | 'chat'
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 antialiased">
       <Navbar />
-      <main>
-        <Hero />
-        <Sections />
-      </main>
+      {view === 'landing' ? (
+        <Landing onGetStarted={() => setView('chat')} />
+      ) : (
+        <ChatApp />
+      )}
       <Footer />
     </div>
   );
